@@ -1,0 +1,25 @@
+安装screen
+
+yum -y install screen
+
+  1，开启一个screen并进入：
+  
+  screen -S session_name
+  
+  2，退出该screen：
+  
+  Ctrl-a d
+  
+  3，在根下查看开启的所有screen：
+  
+  screen -ls
+  
+  4，使用screen名字，kill掉。
+  
+  screen -S session_name -X quit
+  
+  5，激活screen：
+  
+  screen -r session_name
+  
+  exit退出并kiil掉session
