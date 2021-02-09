@@ -23,3 +23,11 @@ yum -y install screen
   screen -r session_name
   
   exit退出并kiil掉session
+  
+  6，显示版本信息
+  
+  -v
+  
+  7，检查目前所有的screen作业，并删除已经无法使用的screen作业
+  
+  -wipe
