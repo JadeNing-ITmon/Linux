@@ -1,2 +1,7 @@
-#查看系统版本
+arch指令主要用于显示当前主机的硬件结构类型，我们可以看到它输出的结果有：i386、i486、mips、alpha等。此命令的适用范围：RedHat、RHEL、Ubuntu、CentOS、SUSE、openSUSE、Fedora.
+
 arch
+
+    --help       显示此帮助信息并退出
+
+    --version       显示版本信息并退出
