@@ -1,0 +1,64 @@
+#安装
+yum install -y vsftpd
+
+#设置开机启动
+systemctl enable vsftpd.service
+
+#启动
+systemctl start vsftpd.service
+
+#停止
+systemctl stop vsftpd.service
+
+#重启ftp
+systemctl restart vsftpd.service
+
+#查看状态
+systemctl status vsftpd.service
+rpm -q vsftpd # 检测是否安装vsftpd
+
+#打开配置文件
+vim /etc/vsftpd/vsftpd.conf
+
+#显示行号
+:set number
+
+#修改配置 12 行，关闭匿名登录
+anonymous_enable=NO
+
+#修改配置 33 行
+anon_mkdir_write_enable=YES
+
+#修改配置48行
+chown_uploads=YES
+
+#修改配置72行
+async_abor_enable=YES
+
+#修改配置82行
+ascii_upload_enable=YES
+
+#修改配置83行
+ascii_download_enable=YES
+
+#修改配置86行
+ftpd_banner=Welcome to blah FTP service.
+
+#修改配置100行
+chroot_local_user=YES
+
+#添加下列内容到vsftpd.conf末尾
+use_localtime=YES
+listen_port=21
+idle_session_timeout=300
+guest_enable=YES
+guest_username=vsftpd
+user_config_dir=/etc/vsftpd/vconf
+data_connection_timeout=1
+virtual_use_local_privs=YES
+pasv_min_port=40000
+pasv_max_port=40010
+accept_timeout=5
+connect_timeout=1
+allow_writeable_chroot=YES
+ 
